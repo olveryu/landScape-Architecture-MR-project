@@ -4008,7 +4008,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1850730992894404, guid: d29bc40b7f3df26479d6a0aac211c355, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d29bc40b7f3df26479d6a0aac211c355, type: 2}
@@ -6256,6 +6256,11 @@ Prefab:
       propertyPath: SaveFileKey
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114331070925992396, guid: 334633f85cfc75d46babf65321d17dea,
+        type: 2}
+      propertyPath: TrianglesPerCubicMeter
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 334633f85cfc75d46babf65321d17dea, type: 2}
@@ -6853,6 +6858,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011070707148, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114431424514551254, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 2}
@@ -7715,7 +7724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a98b181acba5549af3d852c7664623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrianglesPerCubicMeter: 2000
+  TrianglesPerCubicMeter: 500
   TimeBetweenUpdates: 3.5
   observerVolumeType: 0
   extents: {x: 10, y: 10, z: 10}
