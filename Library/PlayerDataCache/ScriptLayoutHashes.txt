@@ -2,6 +2,7 @@ Metro
 PlayerPath?
 D:/google/unity 3d/landScape Architecture/UWP
 SceneListBegin?
+Assets/_Scenes/Start.unity
 Assets/_Scenes/Scan.unity
 SceneListEnd?
 956d61c351f664751dd0638f63fc1ddb Assembly-CSharp.dll:.CreateModel
