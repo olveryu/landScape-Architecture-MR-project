@@ -2,10 +2,9 @@ Metro
 PlayerPath?
 D:/google/unity 3d/landScape Architecture/UWP
 SceneListBegin?
-Assets/_Scenes/Start.unity
-Assets/_Scenes/Scan.unity
+Assets/_Scenes/LandScapeArchitecture.unity
 SceneListEnd?
-956d61c351f664751dd0638f63fc1ddb Assembly-CSharp.dll:.CreateModel
+40f152caa168dc59ae65c53332c43e38 Assembly-CSharp.dll:.CreateModel
 7abde016883951c4ca4e7c44ce6adb2c Assembly-CSharp.dll:HoloToolkit.Unity.SceneLauncher
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:HoloToolkit.Unity.UX.BoundingBoxGizmoHandle
 c435bd06b74bbebac563a6d81dae369c Assembly-CSharp.dll:HoloToolkit.Unity.CanvasHelper
@@ -422,7 +421,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 e7d3d23ab39ca0a3354f7319eb0b73a5 Assembly-CSharp.dll:HoloToolkit.Unity.InputModule.Examples.Grabbables.GrabbableChild
 162c1b465071253842faa177482cbdf5 Assembly-CSharp.dll:HoloToolkit.Examples.UX.ProgressExampleLaunchButton
 21984f001d5a114ee9fbf62810ee8eb7 Assembly-CSharp.dll:UnityStandardAssets.Water.SpecularLighting
-7279c5a207c3e6df756fd2b2dcc8ab21 Assembly-CSharp.dll:HoloToolkit.Examples.GazeRuler.MeasureManager
+ceaaac7c2b1822dcfacfc1a8ea6a1602 Assembly-CSharp.dll:HoloToolkit.Examples.GazeRuler.MeasureManager
 f2b2ed8bce29fbbf652907f1bc21c18b Assembly-CSharp.dll:HoloToolkit.Unity.Tests.PlaneTargetGroupPicker
 e096dd943178e18c46592c7a256d46b0 Assembly-CSharp.dll:HoloToolkit.Examples.InteractiveElements.MoveObjectWidget
 d7abe84a44f6aed10aea7132d8e34f79 Assembly-CSharp.dll:HoloToolkit.Unity.Boundary.SceneContentAdjuster

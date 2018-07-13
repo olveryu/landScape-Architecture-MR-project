@@ -16,7 +16,7 @@ public class CreateModel : MonoBehaviour {
     public Material rotateMaterial;
     public Material interactMaterial;
     public Shader hololenShader;
-    public Dropdown DrowDownMenu;
+    public Dropdown [] DrowDownMenu;
     
     // model that user going to instaniate
     public GameObject[] models;
@@ -35,15 +35,17 @@ public class CreateModel : MonoBehaviour {
         for (int i = 0; i < models.Length; i++) {
             dropOptions.Add(models[i].name);
         }
-        DrowDownMenu.AddOptions(dropOptions);
+        for (int i = 0; i < DrowDownMenu.Length; i++) {
+            DrowDownMenu[i].AddOptions(dropOptions);
+        }
     }
 
-    public void Create() {
-        if (DrowDownMenu.value == 0) {
+    public void Create(int menu) {
+        if (DrowDownMenu[menu].value == 0) {
             return;
         }
         else {
-            InstantiateModel((DrowDownMenu.value) - 1);
+            InstantiateModel((DrowDownMenu[menu].value) - 1);
         }
     }
 
