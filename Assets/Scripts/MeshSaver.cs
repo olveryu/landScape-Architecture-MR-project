@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UnityEngine;
 
 #if !UNITY_EDITOR && UNITY_WSA
@@ -230,9 +231,16 @@ namespace HoloToolkit.Unity.SpatialMapping {
                                     filePath = Path.Combine(MeshFolderName, fileName + " (" + i + ")" + WavefrontFileExtension);
                                 }
 #endif
+            using (var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write)) {
+                var writer = new StreamWriter(stream, Encoding.UTF8);
+                writer.Write(SerializeMeshes(meshes));
+                writer.Flush();
+            }
+            /*
             using (StreamWriter stream = new StreamWriter(filePath)) {
                 stream.Write(SerializeMeshes(meshes));
             }
+            */
 
 #if UNITY_EDITOR
             System.Diagnostics.Process.Start(MeshFolderName);

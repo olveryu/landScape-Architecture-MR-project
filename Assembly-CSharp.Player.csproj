@@ -233,9 +233,6 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.XR.WindowsMR.Editor">
-      <HintPath>Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Standalone/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -1472,10 +1469,8 @@
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\GenericNetworkTransmitter.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\JoinSelectedSessionButton.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\NetworkDiscoveryWithAnchors.cs" />
-    <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\PlayerController.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\PositionDebugButton.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\ResetAnchorButton.cs" />
-    <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\ScrollingSessionListUIController.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\ScrollSessionListButton.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\SessionListButton.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\SharingWithUNET\Scripts\SharedAnchorDebugText.cs" />
@@ -1556,6 +1551,8 @@
     <Compile Include="Assets\Scripts\MeasureManager.cs" />
     <Compile Include="Assets\Scripts\MenuOptions.cs" />
     <Compile Include="Assets\Scripts\MeshSaver.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\ScrollingSessionListUIController.cs" />
     <Compile Include="Assets\Scripts\SpatialUnderstanding.cs" />
     <Compile Include="Assets\Scripts\SpatialUnderstandingCursor.cs" />
     <Compile Include="Assets\Scripts\SphereKeywords.cs" />
