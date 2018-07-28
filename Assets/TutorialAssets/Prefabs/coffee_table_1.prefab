@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 114882629925460644}
   - component: {fileID: 114923614620817576}
   - component: {fileID: 114968937025580738}
-  - component: {fileID: 114532057025747692}
+  - component: {fileID: 114558445461487130}
   m_Layer: 0
   m_Name: coffee_table_1
   m_TagString: Untagged
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2809d00e1924343b61a3db70c2a77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114532057025747692
+--- !u!114 &114558445461487130
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

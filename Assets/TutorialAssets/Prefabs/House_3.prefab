@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 114842215837003702}
   - component: {fileID: 114492902866328020}
   - component: {fileID: 114921244090343500}
-  - component: {fileID: 114593185461570494}
+  - component: {fileID: 114592162905680224}
   m_Layer: 0
   m_Name: House_3
   m_TagString: Untagged
@@ -530,7 +530,7 @@ MonoBehaviour:
     type: 2}
   appBarInstance: {fileID: 0}
   rig: {fileID: 0}
---- !u!114 &114593185461570494
+--- !u!114 &114592162905680224
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

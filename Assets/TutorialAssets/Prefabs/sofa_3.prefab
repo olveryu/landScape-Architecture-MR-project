@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 114735490535169134}
   - component: {fileID: 114810925828923850}
   - component: {fileID: 114107645151586942}
-  - component: {fileID: 114659972407697822}
+  - component: {fileID: 114637937429495604}
   m_Layer: 0
   m_Name: sofa_3
   m_TagString: Untagged
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232cbf910b8baf64c860ec6a30ad0d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114659972407697822
+--- !u!114 &114637937429495604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

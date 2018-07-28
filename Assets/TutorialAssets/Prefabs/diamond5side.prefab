@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114174683537038578}
   - component: {fileID: 114242646951195454}
   - component: {fileID: 114492716185823794}
-  - component: {fileID: 114422313683677852}
+  - component: {fileID: 114888547431608638}
   m_Layer: 0
   m_Name: diamond5side
   m_TagString: Untagged
@@ -283,27 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2809d00e1924343b61a3db70c2a77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114422313683677852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646329890392062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114492716185823794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,3 +326,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232cbf910b8baf64c860ec6a30ad0d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114888547431608638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646329890392062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.033
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1

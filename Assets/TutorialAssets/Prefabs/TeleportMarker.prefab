@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114647603620466948}
   - component: {fileID: 114441178116046654}
   - component: {fileID: 114494076986778934}
-  - component: {fileID: 114659538409720984}
+  - component: {fileID: 114894440558998322}
   m_Layer: 0
   m_Name: TeleportMarker
   m_TagString: Untagged
@@ -666,7 +666,7 @@ MonoBehaviour:
   rotationConstraint: 0
   enableOneHandMovement: 1
   boundingBoxInstance: {fileID: 0}
---- !u!114 &114659538409720984
+--- !u!114 &114894440558998322
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

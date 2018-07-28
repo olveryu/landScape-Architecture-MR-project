@@ -741,7 +741,6 @@
     <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextMeshColorThemeWidget.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
     <Compile Include="Assets\Scripts\AppState.cs" />
-    <Compile Include="Assets\Scripts\Authority.cs" />
     <Compile Include="Assets\Scripts\CreateModel.cs" />
     <Compile Include="Assets\Scripts\FileSurfaceObserver.cs" />
     <Compile Include="Assets\Scripts\GazeResponder.cs" />
@@ -751,6 +750,7 @@
     <Compile Include="Assets\Scripts\MeasureManager.cs" />
     <Compile Include="Assets\Scripts\MenuOptions.cs" />
     <Compile Include="Assets\Scripts\MeshSaver.cs" />
+    <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\NetworkConfig.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SpatialUnderstanding.cs" />

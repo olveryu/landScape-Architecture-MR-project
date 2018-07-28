@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23851353147990572}
   - component: {fileID: 65112102933369114}
   - component: {fileID: 114122439691273652}
-  - component: {fileID: 114589703361827776}
   - component: {fileID: 54576822169716270}
   - component: {fileID: 114106251623548654}
   - component: {fileID: 114338940288727508}
@@ -32,6 +31,7 @@ GameObject:
   - component: {fileID: 114487352099964870}
   - component: {fileID: 114840082237384196}
   - component: {fileID: 114840790953083364}
+  - component: {fileID: 114776390683720088}
   m_Layer: 0
   m_Name: test
   m_TagString: Untagged
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6d71e79d470fc40b4cc9e0a6602ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114589703361827776
+--- !u!114 &114776390683720088
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

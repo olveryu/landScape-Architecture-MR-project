@@ -37,6 +37,7 @@ public class NetworkConfig : MonoBehaviour {
                 if (!prefab.GetComponent<NetworkTransform>()) {
                     NetworkTransform nt = prefab.AddComponent<NetworkTransform>();
                     nt.transformSyncMode = NetworkTransform.TransformSyncMode.SyncTransform;
+                    nt.sendInterval = 0.033f;
                 }
 
                 /*

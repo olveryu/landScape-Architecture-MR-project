@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114344666898872682}
   - component: {fileID: 114806808753100264}
   - component: {fileID: 114174587629114926}
-  - component: {fileID: 114064927451350614}
+  - component: {fileID: 114062161881657932}
   m_Layer: 0
   m_Name: House_2
   m_TagString: Untagged
@@ -471,7 +471,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114064927451350614
+--- !u!114 &114062161881657932
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

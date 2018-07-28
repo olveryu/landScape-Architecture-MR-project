@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114811476306135512}
   - component: {fileID: 114143899920092658}
   - component: {fileID: 114745738102138628}
-  - component: {fileID: 114898282456969414}
+  - component: {fileID: 114648349820040710}
   m_Layer: 0
   m_Name: NetBullet
   m_TagString: Untagged
@@ -317,6 +317,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232cbf910b8baf64c860ec6a30ad0d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114648349820040710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013437630216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.033
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114742536412598072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,27 +399,6 @@ MonoBehaviour:
   rotationConstraint: 0
   enableOneHandMovement: 1
   boundingBoxInstance: {fileID: 0}
---- !u!114 &114898282456969414
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013437630216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114981153572386686
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 114885418273933626}
   - component: {fileID: 114280952484936778}
   - component: {fileID: 114682475654461308}
-  - component: {fileID: 114834745261073684}
+  - component: {fileID: 114787489108972616}
   m_Layer: 0
   m_Name: chair_1
   m_TagString: Untagged
@@ -532,7 +532,7 @@ MonoBehaviour:
     i15: 53
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114834745261073684
+--- !u!114 &114787489108972616
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

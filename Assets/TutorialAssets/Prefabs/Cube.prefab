@@ -32,7 +32,7 @@ GameObject:
   - component: {fileID: 114834476405709204}
   - component: {fileID: 114765350783484546}
   - component: {fileID: 114041786747618242}
-  - component: {fileID: 114673707648035276}
+  - component: {fileID: 114415718847964846}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -304,18 +304,7 @@ MonoBehaviour:
     type: 2}
   appBarInstance: {fileID: 0}
   rig: {fileID: 0}
---- !u!114 &114612784568540220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331855709228164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2809d00e1924343b61a3db70c2a77d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114673707648035276
+--- !u!114 &114415718847964846
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -336,6 +325,17 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114612784568540220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331855709228164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2809d00e1924343b61a3db70c2a77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114765350783484546
 MonoBehaviour:
   m_ObjectHideFlags: 1
