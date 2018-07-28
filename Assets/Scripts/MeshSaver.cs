@@ -231,10 +231,10 @@ namespace HoloToolkit.Unity.SpatialMapping {
                                     filePath = Path.Combine(MeshFolderName, fileName + " (" + i + ")" + WavefrontFileExtension);
                                 }
 #endif
-            using (var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write)) {
-                var writer = new StreamWriter(stream, Encoding.UTF8);
+
+            using (FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write)) {
+                StreamWriter writer = new StreamWriter(stream);
                 writer.Write(SerializeMeshes(meshes));
-                writer.Flush();
             }
             /*
             using (StreamWriter stream = new StreamWriter(filePath)) {

@@ -8,17 +8,13 @@ using HoloToolkit.Unity.InputModule;
 public class Keywords : MonoBehaviour, ISpeechHandler {
 
     public void key(string key) {
+        Rigidbody rb = GetComponent<Rigidbody>();
         switch (key.ToLower()) {
             case "use gravity":
-                if (gameObject.GetComponent<Rigidbody>() == null) {
-                    gameObject.AddComponent<Rigidbody>();
-                }
+                rb.isKinematic = false;
                 break;
             case "cancel gravity":
-                if (gameObject.GetComponent<Rigidbody>() != null) {
-                    Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-                    Destroy(rb);
-                }
+                rb.isKinematic = true;
                 break;
         }
     }

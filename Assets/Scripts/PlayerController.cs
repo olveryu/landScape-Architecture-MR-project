@@ -1,26 +1,25 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+﻿
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using UnityEngine;
 using UnityEngine.Networking;
 using HoloToolkit.Unity.InputModule;
+using System;
+using UnityEngine.UI;
 
-namespace HoloToolkit.Unity.SharingWithUNET
-{
+namespace HoloToolkit.Unity.SharingWithUNET {
     /// <summary>
     /// Controls player behavior (local and remote).
     /// </summary>
     [NetworkSettings(sendInterval = 0.033f)]
-    public class PlayerController : NetworkBehaviour, IInputClickHandler
-    {
+    public class PlayerController : NetworkBehaviour, IInputClickHandler, IInputHandler{
         private static PlayerController _Instance = null;
         /// <summary>
         /// Instance of the PlayerController that represents the local player.
         /// </summary>
-        public static PlayerController Instance
-        {
-            get
-            {
+        public static PlayerController Instance {
+            get {
                 return _Instance;
             }
         }
@@ -62,8 +61,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// <param name="postion">the localPosition to set</param>
         /// <param name="rotation">the localRotation to set</param>
         [Command(channel = 1)]
-        public void CmdTransform(Vector3 postion, Quaternion rotation)
-        {
+        public void CmdTransform(Vector3 postion, Quaternion rotation) {
             localPosition = postion;
             localRotation = rotation;
         }
@@ -80,11 +78,9 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// </summary>
         /// <param name="Established">true if the shared anchor is found</param>
         [Command]
-        private void CmdSendAnchorEstablished(bool Established)
-        {
+        private void CmdSendAnchorEstablished(bool Established) {
             AnchorEstablished = Established;
-            if (Established && SharesSpatialAnchors && !isLocalPlayer)
-            {
+            if (Established && SharesSpatialAnchors && !isLocalPlayer) {
                 Debug.Log("remote device likes the anchor");
 #if UNITY_WSA
                 anchorManager.AnchorFoundRemotely();
@@ -96,8 +92,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// Called when the anchor is either lost or found
         /// </summary>
         /// <param name="update">true if the anchor is found</param>
-        void AnchorEstablishedChanged(bool update)
-        {
+        void AnchorEstablishedChanged(bool update) {
             Debug.LogFormat("AnchorEstablished for {0} was {1} is now {2}", PlayerName, AnchorEstablished, update);
             AnchorEstablished = update;
             // only draw the mesh for the player if the anchor is found.
@@ -115,8 +110,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// </summary>
         /// <param name="playerName">The name to update to</param>
         [Command]
-        private void CmdSetPlayerName(string playerName)
-        {
+        private void CmdSetPlayerName(string playerName) {
             PlayerName = playerName;
         }
 
@@ -124,13 +118,11 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// Called when the player name changes.
         /// </summary>
         /// <param name="update">the updated name</param>
-        void PlayerNameChanged(string update)
-        {
+        void PlayerNameChanged(string update) {
             Debug.LogFormat("Player name changing from {0} to {1}", PlayerName, update);
             PlayerName = update;
             // Special case for spectator view
-            if (PlayerName.ToLower() == "spectatorviewpc")
-            {
+            if (PlayerName.ToLower() == "spectatorviewpc") {
                 gameObject.SetActive(false);
             }
         }
@@ -148,8 +140,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// </summary>
         /// <param name="playerIp"></param>
         [Command]
-        private void CmdSetPlayerIp(string playerIp)
-        {
+        private void CmdSetPlayerIp(string playerIp) {
             PlayerIp = playerIp;
         }
 
@@ -157,8 +148,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// Called when the player IP address changes
         /// </summary>
         /// <param name="update">The updated IP address</param>
-        void PlayerIpChanged(string update)
-        {
+        void PlayerIpChanged(string update) {
             PlayerIp = update;
         }
 
@@ -173,8 +163,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// </summary>
         /// <param name="canShareAnchors">True if the device can share spatial anchors.</param>
         [Command]
-        private void CmdSetCanShareAnchors(bool canShareAnchors)
-        {
+        private void CmdSetCanShareAnchors(bool canShareAnchors) {
             Debug.Log("CMDSetCanShare " + canShareAnchors);
             SharesSpatialAnchors = canShareAnchors;
         }
@@ -183,8 +172,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// Called when the ability to share spatial anchors changes
         /// </summary>
         /// <param name="update">True if the device can share spatial anchors.</param>
-        void SharesAnchorsChanged(bool update)
-        {
+        void SharesAnchorsChanged(bool update) {
             SharesSpatialAnchors = update;
             Debug.LogFormat("{0} {1} share", PlayerName, SharesSpatialAnchors ? "does" : "does not");
         }
@@ -194,30 +182,28 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// </summary>
         private NetworkDiscoveryWithAnchors networkDiscovery;
 
-        void Awake()
-        {
+        void Awake() {
             networkDiscovery = NetworkDiscoveryWithAnchors.Instance;
             anchorManager = UNetAnchorManager.Instance;
         }
 
-        private void Start()
-        {
-            if (SharedCollection.Instance == null)
-            {
+
+        private void Start() {
+            config();
+
+            if (SharedCollection.Instance == null) {
                 Debug.LogError("This script required a SharedCollection script attached to a GameObject in the scene");
                 Destroy(this);
                 return;
             }
 
-            if (isLocalPlayer)
-            {
+            if (isLocalPlayer) {
                 // If we are the local player then we want to have airtaps 
                 // sent to this object so that projectiles can be spawned.
                 InputManager.Instance.AddGlobalListener(gameObject);
                 InitializeLocalPlayer();
             }
-            else
-            {
+            else {
                 Debug.Log("remote player");
                 GetComponentInChildren<MeshRenderer>().material.color = Color.red;
                 AnchorEstablishedChanged(AnchorEstablished);
@@ -228,31 +214,26 @@ namespace HoloToolkit.Unity.SharingWithUNET
             transform.SetParent(sharedWorldAnchorTransform);
         }
 
-        private void Update()
-        {
+        private void Update() {
             // If we aren't the local player, we just need to make sure that the position of this object is set properly
             // so that we properly render their avatar in our world.
-            if (!isLocalPlayer && string.IsNullOrEmpty(PlayerName) == false)
-            {
+            if (!isLocalPlayer && string.IsNullOrEmpty(PlayerName) == false) {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, localPosition, 0.3f);
                 transform.localRotation = localRotation;
                 return;
             }
 
-            if (!isLocalPlayer)
-            {
+            if (!isLocalPlayer) {
                 return;
             }
 
             // if our anchor established state has changed, update everyone
-            if (AnchorEstablished != anchorManager.AnchorEstablished)
-            {
+            if (AnchorEstablished != anchorManager.AnchorEstablished) {
                 CmdSendAnchorEstablished(anchorManager.AnchorEstablished);
             }
 
             // if our anchor isn't established, we shouldn't bother sending transforms.
-            if (AnchorEstablished == false)
-            {
+            if (AnchorEstablished == false) {
                 return;
             }
 
@@ -269,10 +250,8 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// <summary>
         /// Sets up all of the local player information
         /// </summary>
-        private void InitializeLocalPlayer()
-        {
-            if (isLocalPlayer)
-            {
+        private void InitializeLocalPlayer() {
+            if (isLocalPlayer) {
                 Debug.Log("Setting instance for local player ");
                 _Instance = this;
                 Debug.LogFormat("Set local player name {0} IP {1}", networkDiscovery.broadcastData, networkDiscovery.LocalIp);
@@ -290,10 +269,8 @@ namespace HoloToolkit.Unity.SharingWithUNET
             }
         }
 
-        private void OnDestroy()
-        {
-            if (isLocalPlayer)
-            {
+        private void OnDestroy() {
+            if (isLocalPlayer) {
                 InputManager.Instance.RemoveGlobalListener(gameObject);
             }
         }
@@ -302,8 +279,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// Called when the local player starts.  In general the side effect should not be noticed
         /// as the players' avatar is always rendered on top of their head.
         /// </summary>
-        public override void OnStartLocalPlayer()
-        {
+        public override void OnStartLocalPlayer() {
             GetComponentInChildren<MeshRenderer>().material.color = Color.blue;
         }
 
@@ -313,8 +289,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// client on the host.
         /// </summary>
         [Command]
-        void CmdFire()
-        {
+        void CmdFire() {
             Vector3 bulletDir = transform.forward;
             Vector3 bulletPos = transform.position + bulletDir * 1.5f;
 
@@ -327,18 +302,66 @@ namespace HoloToolkit.Unity.SharingWithUNET
             Destroy(nextBullet, 8.0f);
         }
 
+        public void OnInputClicked(InputClickedEventData eventData) {
+            // reference dropdown menu
+            try {
+                TutorialDrowdownMenu = GameObject.Find("Tutorial").GetComponent<Dropdown>();
+                StudentDrowdownMenu = GameObject.Find("Student").GetComponent<Dropdown>();
+            }
+            catch (Exception e) {
+                Debug.Log(e);
+            }
+            // instantiate models
+            if (TutorialDrowdownMenu && TutorialDrowdownMenu.value != 0) {
+                CmdInstantiateTutorialModel(TutorialDrowdownMenu.value - 1);
+                TutorialDrowdownMenu.value = 0;
+            }
+            if (StudentDrowdownMenu && StudentDrowdownMenu.value != 0) {
+                CmdInstantiateStudentModel(StudentDrowdownMenu.value - 1);
+                StudentDrowdownMenu.value = 0;
+            }
 
-        public void OnInputClicked(InputClickedEventData eventData)
-        {
-            if (isLocalPlayer)
-            {
-                CmdFire();
+            if (eventData.selectedObject) {
+                NetworkIdentity ni = eventData.selectedObject.GetComponent<NetworkIdentity>();
+                if (ni != null) {
+                    for (int i = 0; i < players.transform.childCount; i++) {
+                        try {
+                            CmdRemoveAuthority(ni, players.transform.GetChild(i).GetComponent<NetworkIdentity>());
+                        }
+                        catch (Exception e) {
+                            Debug.Log(e);
+                        }
+                    }
+                    CmdSetAuthority(ni, GetComponent<NetworkIdentity>());
+                }
             }
         }
 
+        // input down
+        public void OnInputDown(InputEventData eventData) {
+            if (eventData.selectedObject) {
+                NetworkIdentity ni = eventData.selectedObject.GetComponent<NetworkIdentity>();
+                if (ni != null) {
+                    for (int i = 0; i < players.transform.childCount; i++) {
+                        try {
+                            CmdRemoveAuthority(ni, players.transform.GetChild(i).GetComponent<NetworkIdentity>());
+                        }
+                        catch (Exception e) {
+                            Debug.Log(e);
+                        }
+                    }
+                    CmdSetAuthority(ni, GetComponent<NetworkIdentity>());
+                }
+            }
+        }
+
+        // input up
+        public void OnInputUp(InputEventData eventData) {
+            Debug.Log("release" + eventData);
+        }
+
         [Command]
-        private void CmdSendSharedTransform(GameObject target, Vector3 pos, Quaternion rot)
-        {
+        private void CmdSendSharedTransform(GameObject target, Vector3 pos, Quaternion rot) {
             UNetSharedHologram ush = target.GetComponent<UNetSharedHologram>();
             ush.CmdTransform(pos, rot);
         }
@@ -349,12 +372,89 @@ namespace HoloToolkit.Unity.SharingWithUNET
         /// <param name="target">The shared hologram</param>
         /// <param name="pos">position relative to the shared anchor</param>
         /// <param name="rot">rotation relative to the shared anchor</param>
-        public void SendSharedTransform(GameObject target, Vector3 pos, Quaternion rot)
-        {
-            if (isLocalPlayer)
-            {
+        public void SendSharedTransform(GameObject target, Vector3 pos, Quaternion rot) {
+            if (isLocalPlayer) {
                 CmdSendSharedTransform(target, pos, rot);
             }
+        }
+
+        //zhenyu yan's code
+        public CreateModel tutotial;
+        public CreateModel student;
+        public Camera MRCamera;
+        public Dropdown TutorialDrowdownMenu;
+        public Dropdown StudentDrowdownMenu;
+        public Shader hololenShader;
+        public GameObject players;
+        public GameObject parent;
+
+        // model that user going to instaniate
+        public GameObject[] TutorialModels;
+        public GameObject[] StudentModels;
+
+        private void config() {
+            
+            // reference gameobject
+            tutotial = GameObject.Find("ExampleModels").GetComponent<CreateModel>();
+            student = GameObject.Find("Models").GetComponent<CreateModel>();
+            MRCamera = GameObject.Find("HoloLensCamera").GetComponent<Camera>();
+            players = GameObject.Find("HologramCollection");
+            parent = GameObject.Find("SceneContent");
+
+            // add models to player
+            TutorialModels = new GameObject[tutotial.models.Length];
+            StudentModels = new GameObject[student.models.Length];
+            for (int i = 0; i < tutotial.models.Length; i++) {
+                TutorialModels[i] = tutotial.models[i];
+            }
+            for (int i = 0; i < student.models.Length; i++) {
+                StudentModels[i] = student.models[i];
+            }
+        }
+
+        [Command]
+        public void CmdInstantiateTutorialModel(int index) {
+            //instantiate models
+            Vector3 objDir = transform.forward;
+            Vector3 ObjPos = transform.position + objDir * 1.5f;
+            GameObject newGameObject = Instantiate(TutorialModels[index], sharedWorldAnchorTransform.InverseTransformPoint(ObjPos), TutorialModels[index].transform.rotation, parent.transform);
+            ChangeShader(newGameObject);
+            NetworkServer.SpawnWithClientAuthority(newGameObject, gameObject);
+        }
+
+        [Command]
+        public void CmdInstantiateStudentModel(int index) {
+            //instantiate models
+            Vector3 objDir = transform.forward;
+            Vector3 ObjPos = transform.position + objDir * 1.5f;
+            GameObject newGameObject = Instantiate(StudentModels[index], sharedWorldAnchorTransform.InverseTransformPoint(ObjPos), StudentModels[index].transform.rotation, parent.transform);
+            ChangeShader(newGameObject);
+            NetworkServer.SpawnWithClientAuthority(newGameObject, gameObject);
+        }
+
+
+        // changed shader to hololens standard
+        private void ChangeShader(GameObject obj) {
+            if (!obj.GetComponent<MeshRenderer>()) {
+                return;
+            }
+            else {
+                obj.GetComponent<MeshRenderer>().material.shader = hololenShader;
+                for (int i = 0; i < obj.transform.childCount; i++) {
+                    GameObject child = obj.transform.GetChild(i).gameObject;
+                    ChangeShader(child);
+                }
+            }
+        }
+
+        [Command]
+        void CmdSetAuthority(NetworkIdentity grabID, NetworkIdentity playerID) {
+            grabID.AssignClientAuthority(playerID.connectionToClient);
+        }
+
+        [Command]
+        void CmdRemoveAuthority(NetworkIdentity grabID, NetworkIdentity playerID) {
+            grabID.RemoveClientAuthority(playerID.connectionToClient);
         }
     }
 }

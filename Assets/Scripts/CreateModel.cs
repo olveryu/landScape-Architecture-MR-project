@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using HoloToolkit.Unity.InputModule.Utilities.Interactions;
-using HoloToolkit.Unity.UX;
 using System;
 using UnityEngine.UI;
 
 public class CreateModel : MonoBehaviour {
 
+    /*
     public Camera MRCamera;
     public GameObject ScenceContent;
     public BoundingBox BoxPrefabs;
@@ -16,8 +15,13 @@ public class CreateModel : MonoBehaviour {
     public Material rotateMaterial;
     public Material interactMaterial;
     public Shader hololenShader;
-    public Dropdown [] DrowDownMenu;
-    
+    public GameObject newGameObject;
+    */
+    public Dropdown[] DrowDownMenu;
+    private int index;
+
+
+
     // model that user going to instaniate
     public GameObject[] models;
 
@@ -40,6 +44,7 @@ public class CreateModel : MonoBehaviour {
         }
     }
 
+    /*
     public void Create(int menu) {
         if (DrowDownMenu[menu].value == 0) {
             return;
@@ -48,16 +53,13 @@ public class CreateModel : MonoBehaviour {
             InstantiateModel((DrowDownMenu[menu].value) - 1);
         }
     }
+    */
 
+    /*
     public void InstantiateModel(int index) {
+        //instantiate models
         Vector3 position = MRCamera.ViewportToWorldPoint(new Vector3(0.5f, 0, 2.0f));
-        GameObject newGameObject = Instantiate(models[index], position, models[index].transform.rotation);
-
-        // remove rigidbody
-        Rigidbody rb = newGameObject.GetComponent<Rigidbody>();
-        if (rb) {
-            Destroy(rb);
-        }
+        newGameObject = Instantiate(models[index], position, models[index].transform.rotation);
 
         // GazeResponder
         newGameObject.transform.parent = ScenceContent.transform;
@@ -101,9 +103,8 @@ public class CreateModel : MonoBehaviour {
         box.scaleRate = 3.0f;
         box.maxScale = 100.0f;
 
-        //mesh combine
-        //newGameObject.AddComponent<MeshCombine>();
     }
+
 
     // check checkColliderExist in parent and it's child gameobject
     private bool CheckColliderExist(GameObject obj) {
@@ -123,12 +124,19 @@ public class CreateModel : MonoBehaviour {
 
     // check single gameobject has collider
     private bool HasCollider(GameObject obj) {
-        if (obj.GetComponent<BoxCollider>() == null && obj.GetComponent<SphereCollider>() == null
-            && obj.GetComponent<CapsuleCollider>() == null && obj.GetComponent<MeshCollider>() == null 
-            && obj.GetComponent<WheelCollider>() == null && obj.GetComponent<TerrainCollider>() == null) {
-            return false;
+        MeshCollider mc = obj.GetComponent<MeshCollider>();
+        if (mc) {
+            try{
+                mc.convex = true;
+            }catch(Exception e){
+                Debug.Log(e);
+            }
         }
-        else {
+        if (obj.GetComponent<BoxCollider>() == null && obj.GetComponent<SphereCollider>() == null
+            && obj.GetComponent<CapsuleCollider>() == null && obj.GetComponent<WheelCollider>() == null 
+            && obj.GetComponent<TerrainCollider>() == null && obj.GetComponent<MeshCollider>() == null) {
+            return false;
+        }else{
             return true;
         }
     }
@@ -159,4 +167,5 @@ public class CreateModel : MonoBehaviour {
             }
         }
     }
+    */
 }
