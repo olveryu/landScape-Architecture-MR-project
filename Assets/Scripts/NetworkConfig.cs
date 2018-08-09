@@ -37,7 +37,7 @@ public class NetworkConfig : MonoBehaviour {
                 if (!prefab.GetComponent<NetworkTransform>()) {
                     NetworkTransform nt = prefab.AddComponent<NetworkTransform>();
                     nt.transformSyncMode = NetworkTransform.TransformSyncMode.SyncTransform;
-                    nt.sendInterval = 0.033f;
+                    nt.sendInterval = 0.05f;
                 }
 
                 /*
@@ -60,7 +60,7 @@ public class NetworkConfig : MonoBehaviour {
                 }
 
                 // GazeResponder
-                if (!prefab.GetComponent<GazeResponder>()) {
+                if (prefab.GetComponent<GazeResponder>() == null) {
                     prefab.AddComponent<GazeResponder>();
                 }
 
@@ -75,31 +75,31 @@ public class NetworkConfig : MonoBehaviour {
                 }
 
                 // TapResponder
-                if (!prefab.GetComponent<TapResponder>()) {
+                if (prefab.GetComponent<TapResponder>() == null) {
                     prefab.AddComponent<TapResponder>();
                 }
 
                 // AudioSource
-                if (!prefab.GetComponent<AudioSource>()) {
+                if (prefab.GetComponent<AudioSource>() == null) {
                     AudioSource source = prefab.AddComponent<AudioSource>();
                     source.clip = clip;
                 }
 
 
                 // keywords
-                if (!prefab.GetComponent<Keywords>()) {
+                if (prefab.GetComponent<Keywords>() == null) {
                     prefab.AddComponent<Keywords>();
                 }
 
                 // TwoHandManipulatable
-                if (!prefab.GetComponent<TwoHandManipulatable>()) {
+                if (prefab.GetComponent<TwoHandManipulatable>() == null) {
                     TwoHandManipulatable twoHand = prefab.AddComponent<TwoHandManipulatable>();
                     twoHand.ManipulationMode = ManipulationMode.RotateAndScale;
                     twoHand.BoundingBoxPrefab = BoxPrefabs;
                 }
 
                 // BoundingBoxRig
-                if (!prefab.GetComponent<BoundingBoxRig>()) {
+                if (prefab.GetComponent<BoundingBoxRig>() == null) {
                     BoundingBoxRig box = prefab.AddComponent<BoundingBoxRig>();
                     box.ScaleHandleMaterial = scaleMaterial;
                     box.RotateHandleMaterial = rotateMaterial;

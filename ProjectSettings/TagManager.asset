@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Tip
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -14,7 +13,6 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
   - 
   - 
   - 
@@ -37,7 +35,8 @@ TagManager:
   - 
   - 
   - 
-  - Spatial Mapping
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0

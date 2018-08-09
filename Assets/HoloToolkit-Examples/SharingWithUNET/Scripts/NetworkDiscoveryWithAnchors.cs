@@ -310,7 +310,7 @@ namespace HoloToolkit.Unity.SharingWithUNET
             // Invoke creating an anchor in a couple frames to give all the Unet network objects time to spawn.
             Invoke("InvokeCreateAnchor", 0.25f);
 #else
-            Debug.Log("This script will need modification to work in the Unity Editor");
+            Debug.LogWarning("This script will need modification to work in the Unity Editor");
 #endif
 
             SignalSessionListEvent();

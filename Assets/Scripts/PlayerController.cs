@@ -386,7 +386,6 @@ namespace HoloToolkit.Unity.SharingWithUNET {
         public Dropdown StudentDrowdownMenu;
         public Shader hololenShader;
         public GameObject players;
-        public GameObject parent;
 
         // model that user going to instaniate
         public GameObject[] TutorialModels;
@@ -399,7 +398,6 @@ namespace HoloToolkit.Unity.SharingWithUNET {
             student = GameObject.Find("Models").GetComponent<CreateModel>();
             MRCamera = GameObject.Find("HoloLensCamera").GetComponent<Camera>();
             players = GameObject.Find("HologramCollection");
-            parent = GameObject.Find("SceneContent");
 
             // add models to player
             TutorialModels = new GameObject[tutotial.models.Length];
@@ -417,7 +415,7 @@ namespace HoloToolkit.Unity.SharingWithUNET {
             //instantiate models
             Vector3 objDir = transform.forward;
             Vector3 ObjPos = transform.position + objDir * 1.5f;
-            GameObject newGameObject = Instantiate(TutorialModels[index], sharedWorldAnchorTransform.InverseTransformPoint(ObjPos), TutorialModels[index].transform.rotation, parent.transform);
+            GameObject newGameObject = Instantiate(TutorialModels[index], sharedWorldAnchorTransform.InverseTransformPoint(ObjPos), Quaternion.Euler(TutorialModels[index].transform.rotation.eulerAngles));
             ChangeShader(newGameObject);
             NetworkServer.SpawnWithClientAuthority(newGameObject, gameObject);
         }
@@ -427,7 +425,7 @@ namespace HoloToolkit.Unity.SharingWithUNET {
             //instantiate models
             Vector3 objDir = transform.forward;
             Vector3 ObjPos = transform.position + objDir * 1.5f;
-            GameObject newGameObject = Instantiate(StudentModels[index], sharedWorldAnchorTransform.InverseTransformPoint(ObjPos), StudentModels[index].transform.rotation, parent.transform);
+            GameObject newGameObject = Instantiate(StudentModels[index], sharedWorldAnchorTransform.InverseTransformPoint(ObjPos), Quaternion.Euler(StudentModels[index].transform.rotation.eulerAngles));
             ChangeShader(newGameObject);
             NetworkServer.SpawnWithClientAuthority(newGameObject, gameObject);
         }

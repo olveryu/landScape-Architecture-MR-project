@@ -128,22 +128,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 163
-    i1: 130
-    i2: 124
-    i3: 143
-    i4: 121
-    i5: 197
-    i6: 165
-    i7: 132
-    i8: 186
-    i9: 203
-    i10: 100
-    i11: 98
-    i12: 240
-    i13: 34
-    i14: 227
-    i15: 5
+    i0: 171
+    i1: 61
+    i2: 128
+    i3: 36
+    i4: 101
+    i5: 60
+    i6: 131
+    i7: 244
+    i8: 91
+    i9: 146
+    i10: 221
+    i11: 118
+    i12: 225
+    i13: 226
+    i14: 153
+    i15: 84
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
 --- !u!114 &114000013771453016
@@ -154,10 +154,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011857482914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc70810d3cb39344082e8260109313bc, type: 3}
+  m_Script: {fileID: 11500000, guid: d3b3bfc4688e1c14891dfe0d65fe433d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1000013437630216, guid: f59738f66a2923a44b1de68dd1887fd0, type: 2}
+  bullet: {fileID: 0}
   CanShareAnchors: 0
   SharesSpatialAnchors: 0
   tutotial: {fileID: 0}
@@ -166,5 +166,7 @@ MonoBehaviour:
   TutorialDrowdownMenu: {fileID: 0}
   StudentDrowdownMenu: {fileID: 0}
   hololenShader: {fileID: 4800000, guid: d45c0efca53019e43891b0f610f8146e, type: 3}
+  players: {fileID: 0}
+  parent: {fileID: 0}
   TutorialModels: []
   StudentModels: []

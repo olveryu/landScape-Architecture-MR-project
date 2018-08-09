@@ -29,6 +29,6 @@ Material:
     - _Falloff_Scale: 0.4
     - _WireThickness: 332
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.14509821, b: 1, a: 0}
+    - _BaseColor: {r: 0, g: 0.37931037, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _WireColor: {r: 0, g: 0.7921572, b: 1, a: 1}
+    - _WireColor: {r: 0, g: 0.7931037, b: 1, a: 1}

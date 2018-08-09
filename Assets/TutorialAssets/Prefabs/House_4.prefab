@@ -38,16 +38,16 @@ GameObject:
   m_Component:
   - component: {fileID: 4653487673309462}
   - component: {fileID: 95122500891960732}
-  - component: {fileID: 54045486603359448}
-  - component: {fileID: 114958061963022360}
   - component: {fileID: 23682604533771426}
-  - component: {fileID: 114215461609039776}
-  - component: {fileID: 82775124616384454}
-  - component: {fileID: 114010358910602840}
-  - component: {fileID: 114646440127761154}
-  - component: {fileID: 114112639454624482}
-  - component: {fileID: 114449155301018854}
-  - component: {fileID: 114939912479526300}
+  - component: {fileID: 114680409754290372}
+  - component: {fileID: 54088273469859728}
+  - component: {fileID: 114084967778794550}
+  - component: {fileID: 114059912910849490}
+  - component: {fileID: 82470854385083360}
+  - component: {fileID: 114331848423907640}
+  - component: {fileID: 114980090552944468}
+  - component: {fileID: 114373608127480884}
+  - component: {fileID: 114205536863503638}
   m_Layer: 0
   m_Name: House_4
   m_TagString: Untagged
@@ -307,7 +307,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643737680672674}
   m_Mesh: {fileID: 4300004, guid: 42350cecc2959a246a2afc7215b375c5, type: 3}
---- !u!54 &54045486603359448
+--- !u!54 &54088273469859728
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -358,7 +358,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 407.63617, y: 223.92142, z: 204.95554}
   m_Center: {x: 6.9904556, y: 111.80168, z: -0.42813492}
---- !u!82 &82775124616384454
+--- !u!82 &82470854385083360
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -471,7 +471,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114010358910602840
+--- !u!114 &114059912910849490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,10 +479,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 1213906963617914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2809d00e1924343b61a3db70c2a77d, type: 3}
+  m_Script: {fileID: 11500000, guid: ba9fabcc6b3c21742bee7d598fa14b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114112639454624482
+--- !u!114 &114084967778794550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213906963617914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273955db5e3f37a4c9a17ff13017575d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114205536863503638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213906963617914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.05
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114331848423907640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213906963617914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdbad2fab7ed3544a58a54e2f35e4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114373608127480884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -508,18 +551,7 @@ MonoBehaviour:
     type: 2}
   appBarInstance: {fileID: 0}
   rig: {fileID: 0}
---- !u!114 &114215461609039776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1213906963617914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232cbf910b8baf64c860ec6a30ad0d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114449155301018854
+--- !u!114 &114680409754290372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -551,7 +583,7 @@ MonoBehaviour:
     i15: 159
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114646440127761154
+--- !u!114 &114980090552944468
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -569,35 +601,3 @@ MonoBehaviour:
   rotationConstraint: 0
   enableOneHandMovement: 1
   boundingBoxInstance: {fileID: 0}
---- !u!114 &114939912479526300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1213906963617914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.033
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114958061963022360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1213906963617914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6d71e79d470fc40b4cc9e0a6602ea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
