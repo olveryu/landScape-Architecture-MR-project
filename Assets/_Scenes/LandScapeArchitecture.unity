@@ -9389,9 +9389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2764e0ab3c6377d4388c123a7a6a7a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kMinAreaForStats: 5
-  kMinAreaForComplete: 50
-  kMinHorizAreaForComplete: 25
+  kMinAreaForStats: 1
+  kMinAreaForComplete: 5
+  kMinHorizAreaForComplete: 10
   kMinWallAreaForComplete: 10
   DebugDisplay: {fileID: 204535789}
   DebugSubDisplay: {fileID: 34305616}

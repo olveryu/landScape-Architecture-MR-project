@@ -1,6 +1,6 @@
 Metro
 PlayerPath?
-D:/github/landScape-Architecture/UWP
+D:/google/MixedRealityToolkit-Unity-master/UWP
 SceneListBegin?
 Assets/_Scenes/LandScapeArchitecture.unity
 SceneListEnd?
